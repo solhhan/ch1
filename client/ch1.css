@@ -1,0 +1,74 @@
+body {
+  font-family: "Trebuchet MS";
+  background-color: #FEFEFE;
+}
+
+.container {
+  background-color: #FEFEFE;
+
+  position: relative;
+  width: 600px;
+  height: 100%;
+  padding: 10px;
+  margin: auto auto 30px auto;
+}
+
+.gameBox {
+  background-color: #DEDEDE;
+
+  width: 80%;
+  height: 300px;
+  padding: 10px;
+  margin: 30px auto 30px auto;
+
+  text-align: center;
+}
+
+.createGameButton {
+  position: relative;
+  padding: 20px;
+  margin: 25% auto auto auto;
+}
+
+.joinButton {
+  float: right;
+}
+
+.viewButton {
+  float: right;
+}
+
+.player1Box {
+  float: left;
+}
+
+.player2Box {
+  float: right;
+}
+
+.moveImg {
+  width: 100px;
+  height: 100px;
+}
+
+header {
+  text-align: center;
+}
+
+li {
+  width: 100%;
+  height: 30px;
+  padding: 3px;
+}
+
+li:hover {
+  background-color: #ABCDEF;
+}
+
+input[type="button"]:hover {
+  background-color: #89ABCD;
+}
+
+
+
+

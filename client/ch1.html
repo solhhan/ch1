@@ -1,0 +1,116 @@
+<head>
+  <title>Challenge 1: Rock, Paper, Scissors</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Rock, Paper, Scissors!</h1>
+      <!-- {{> loginButtons}} -->
+    </header>
+
+    <div class="gameBox">
+      {{#if currentGameID}}
+        {{#with currentGame}}
+          <h2>Game #{{currentGameID}}</h2>
+
+          <!-- Player 1 -->
+          <div class="player1Box">
+            {{#if isCompleted}}
+              <img class="moveImg" src='{{player1Move}}.png' /><br />
+            {{else}}
+              <img class="moveImg" src='unknown.jpg' /><br />
+            {{/if}}
+            <span class="player1Text">Player 1</span><br />
+            {{#if isCompleted}}
+              {{player1Move}}
+            {{else}}
+              {{#if player1Move}}
+                ?
+              {{else}}
+                {{> moveButtons1}}
+              {{/if}}
+            {{/if}}
+          </div>
+
+          <!-- Player 2 -->
+          <div class="player2Box">
+            {{#if isCompleted}}
+              <img class="moveImg" src='{{player2Move}}.png' /><br />
+            {{else}}
+              <img class="moveImg" src='unknown.jpg' /><br />
+            {{/if}}
+            <span class="player2Text">Player 2</span><br />
+            {{#if isCompleted}}
+              {{player2Move}}
+            {{else}}
+              {{#if player2Move}}
+                ?
+              {{else}}
+                {{> moveButtons2}}
+              {{/if}}
+            {{/if}}
+          </div>
+
+          {{#if winner}}
+            <h3 class="winnerText">The winner is {{winner}}!</h3>
+            <button class="createGameButton">New Game</button>
+          {{/if}}
+        {{/with}}
+      {{else}}
+        <button class="createGameButton">Join a game below, or click here to start a new one!</button>
+      {{/if}}
+    </div>
+
+    <div class="openGamesBox">
+      <h2>Open Games ({{openGameCount}})</h2>
+      <ul>
+        {{#each openGames}}
+          {{> openGame}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="completedGamesBox">
+      <h2>Completed Games ({{completedGameCount}})</h2>
+      <ul>
+        {{#each completedGames}}
+          {{> completedGame}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</body>
+
+<template name="moveButtons1">
+  <button class="rockButton1">Rock</button>
+  <button class="paperButton1">Paper</button>
+   <button class="scissorsButton1">Scissors</button>
+</template>
+
+<template name="moveButtons2">
+  <button class="rockButton2">Rock</button>
+  <button class="paperButton2">Paper</button>
+   <button class="scissorsButton2">Scissors</button>
+</template>
+
+<template name="openGame">
+  <li>
+	  <span class="text">[{{creationDate}}] {{gameId}}</span>
+	  <button class="joinButton">Join</button>
+  </li>
+</template>
+
+<template name="completedGame">
+  <li>
+    <span class="text">[{{creationDate}}] {{gameId}}</span>
+    <!-- <button class="viewButton">View</button> -->
+  </li>
+</template>
+
+
+
+
+
+
+
